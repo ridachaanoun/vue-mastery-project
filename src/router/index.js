@@ -1,6 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/HomeView.vue';
-import Posts from '../components/Posts-.vue';
+import PostList from '../components/PostList.vue'; 
 
 const routes = [
   {
@@ -11,13 +11,13 @@ const routes = [
   {
     path: '/posts',
     name: 'Posts',
-    component: Posts,
+    component: PostList, 
   },
 ];
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
