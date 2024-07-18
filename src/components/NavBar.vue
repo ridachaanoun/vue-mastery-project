@@ -23,10 +23,13 @@
     },
     methods: {
       logout() {
-        localStorage.removeItem('userId');
-        this.isAuthenticated = false;
-        this.$router.push('/login');
-      },
+  const confirmed = confirm("Are you sure you want to log out?");
+  if (confirmed) {
+    localStorage.removeItem('userId');
+    this.isAuthenticated = false;
+    this.$router.push('/login');
+  }
+},
     },
     watch: {
       $route() {

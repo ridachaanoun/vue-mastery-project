@@ -117,6 +117,13 @@
       "body": "eee",
       "comments": [],
       "userId": "e5c3"
+    },
+    {
+      "id": "3a46",
+      "title": "eveniet quod temporibus",
+      "body": "reprehenderit quos placeat\\nvelit minima officia dolores impedit repudiandae molestiae nam\\nvoluptas recusandae quis delectus\\nofficiis harum fugiat vitae",
+      "comments": [],
+      "userId": "295c"
     }
   ],
   "users": [
@@ -366,6 +373,18 @@
       "phone": "0637876585",
       "website": "rida.com",
       "password": "1010"
+    },
+    {
+      "id": "295c",
+      "name": "user",
+      "username": "user",
+      "email": "user@gmail.com",
+      "address": {
+        "city": "Safi"
+      },
+      "phone": "02052151",
+      "website": "swsws",
+      "password": "1010"
     }
   ],
   "todos": [
@@ -376,10 +395,40 @@
       "id": "1721301480715"
     },
     {
-      "title": "hhh",
-      "completed": true,
+      "title": "hhhssss",
+      "completed": false,
       "userId": "e5c3",
       "id": "1721301737938"
+    },
+    {
+      "title": "ssss",
+      "completed": true,
+      "userId": "e5c3",
+      "id": "1721304018929"
+    },
+    {
+      "id": "1721312159259",
+      "title": "f",
+      "completed": false,
+      "userId": "295c"
+    },
+    {
+      "id": "1721312159979",
+      "title": "f",
+      "completed": false,
+      "userId": "295c"
+    },
+    {
+      "id": "1721312163355",
+      "title": "f",
+      "completed": false,
+      "userId": "295c"
+    },
+    {
+      "id": "1721312163979",
+      "title": "f",
+      "completed": false,
+      "userId": "295c"
     }
   ]
 }

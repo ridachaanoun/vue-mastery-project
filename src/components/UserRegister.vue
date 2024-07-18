@@ -2,14 +2,14 @@
   <div class="container mx-auto p-4">
     <h1 class="text-2xl font-bold mb-4">Register</h1>
     <form @submit.prevent="register">
-      <input v-model="name" type="text" placeholder="Name" class="border p-2 mb-2 w-full" required />
-      <input v-model="username" type="text" placeholder="Username" class="border p-2 mb-2 w-full" required />
-      <input v-model="email" type="email" placeholder="Email" class="border p-2 mb-2 w-full" required />
-      <input v-model="city" type="text" placeholder="City" class="border p-2 mb-2 w-full" required />
-      <input v-model="phone" type="text" placeholder="Phone" class="border p-2 mb-2 w-full" required />
-      <input v-model="website" type="text" placeholder="Website" class="border p-2 mb-2 w-full" required />
-      <input v-model="password" type="password" placeholder="Password" class="border p-2 mb-2 w-full" required />
-      <button type="submit" class="bg-blue-500 text-white p-2 w-full">Register</button>
+      <input v-model="name" type="text" placeholder="Name" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="username" type="text" placeholder="Username" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="email" type="email" placeholder="Email" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="city" type="text" placeholder="City" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="phone" type="text" placeholder="Phone" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="website" type="text" placeholder="Website" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <input v-model="password" type="password" placeholder="Password" class="border p-2 mb-2 w-full rounded-lg focus:outline-none focus:border-blue-500" required />
+      <button type="submit" class="bg-blue-500 text-white p-2 w-full rounded-lg shadow-md hover:bg-blue-600 transition duration-300">Register</button>
     </form>
   </div>
 </template>

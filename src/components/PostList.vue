@@ -1,18 +1,24 @@
 <template>
   <div class="container mx-auto p-4">
-    <h1 class="text-2xl font-bold mb-4">Posts</h1>
-    <form @submit.prevent="addPost" class="mb-4">
-      <input v-model="newPost.title" placeholder="Title" class="border p-2 mr-2" required />
-      <textarea v-model="newPost.body" placeholder="Body" class="border p-2 mr-2" required></textarea>
-      <button type="submit" class="bg-blue-500 text-white p-2">Add Post</button>
+    <h1 class="text-3xl font-bold mb-6">Posts</h1>
+    <form @submit.prevent="addPost" class="mb-6">
+      <div class="flex mb-4">
+        <input v-model="newPost.title" placeholder="Title" class=" rounded-lg flex-1 mr-2 px-4 py-2 ring-2   " required />
+        <textarea v-model="newPost.body" placeholder="Body" class=" rounded-lg flex-1 px-4 py-2 ring-2" required></textarea>
+      </div>
+      <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg">Add Post</button>
     </form>
-    <ul class="space-y-4">
-      <li v-for="post in posts" :key="post.id" class="bg-white p-4 rounded-lg shadow">
-        <router-link :to="{ name: 'SinglePost', params: { id: post.id } }" class="text-xl font-semibold">{{ post.title }}</router-link>
+    <ul class="space-y-6">
+      <li v-for="post in posts" :key="post.id" class="bg-white rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between mb-2">
+          <p class="text-gray-500">Posted by: {{ getUsername(post.userId) }}</p>
+          <div>
+            <button v-if="post.userId === userId" @click="openEditModal(post)" class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-2 rounded-lg mr-2">Edit</button>
+            <button v-if="post.userId === userId" @click="deletePost(post.id)" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg">Delete</button>
+          </div>
+        </div>
+        <router-link :to="{ name: 'SinglePost', params: { id: post.id } }" class="block text-2xl font-semibold hover:text-blue-500">{{ post.title }}</router-link>
         <p class="text-gray-700 mt-2">{{ post.body }}</p>
-        <p class="text-gray-500 mt-2">Posted by: {{ getUsername(post.userId) }}</p> <!-- Display username -->
-        <button v-if="post.userId === userId" @click="openEditModal(post)" class="bg-yellow-500 text-white p-2 mr-2">Edit</button>
-        <button v-if="post.userId === userId" @click="deletePost(post.id)" class="bg-red-500 text-white p-2">Delete</button>
       </li>
     </ul>
     <EditPostModal :show="showEditModal" :post="selectedPost" @close="closeEditModal" @save="updatePost" />
@@ -111,5 +117,5 @@ export default {
 </script>
 
 <style scoped>
-/* Scoped styles */
+/* Scoped styles can be empty or removed */
 </style>
