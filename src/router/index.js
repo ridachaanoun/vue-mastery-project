@@ -1,7 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/HomeView.vue';
-import PostList from '../components/PostList.vue'; 
-
+import Posts from '../components/PostList.vue';
+import Comments from '../components/CommentList.vue';
+import Users from '../components/UserList.vue';
+import UserLogin from '../components/UserLogin.vue';
+import UserRegister from '../components/UserRegister.vue';
+import SinglePost from '../components/SinglePost.vue';
 const routes = [
   {
     path: '/',
@@ -11,8 +15,33 @@ const routes = [
   {
     path: '/posts',
     name: 'Posts',
-    component: PostList, 
+    component: Posts,
   },
+  {
+    path: '/comments',
+    name: 'Comments',
+    component: Comments,
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: Users,
+  },
+  {
+    path: '/login',
+    name: 'Login',
+    component: UserLogin,
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: UserRegister,
+  },
+  {
+    path: '/posts/:id',
+    name: 'SinglePost',
+    component: SinglePost,
+  }
 ];
 
 const router = createRouter({

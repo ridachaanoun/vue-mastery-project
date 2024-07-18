@@ -1,18 +1,24 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/posts">Posts</router-link>
-    </nav>
+    <NavBar />
     <router-view />
   </div>
 </template>
 
+<script>
+import NavBar from './components/NavBar.vue';
+
+export default {
+  name: 'App',
+  components: {
+    NavBar,
+  },
+};
+</script>
+
 <style>
-nav {
-  padding: 15px;
-}
-nav a {
-  margin-right: 10px;
+/* Global styles can go here */
+body {
+  font-family: Arial, sans-serif;
 }
 </style>
