@@ -10,6 +10,7 @@
       <li v-for="post in posts" :key="post.id" class="bg-white p-4 rounded-lg shadow">
         <router-link :to="{ name: 'SinglePost', params: { id: post.id } }" class="text-xl font-semibold">{{ post.title }}</router-link>
         <p class="text-gray-700 mt-2">{{ post.body }}</p>
+        <p class="text-gray-500 mt-2">Posted by: {{ getUsername(post.userId) }}</p> <!-- Display username -->
         <button v-if="post.userId === userId" @click="openEditModal(post)" class="bg-yellow-500 text-white p-2 mr-2">Edit</button>
         <button v-if="post.userId === userId" @click="deletePost(post.id)" class="bg-red-500 text-white p-2">Delete</button>
       </li>
@@ -38,10 +39,12 @@ export default {
       userId: localStorage.getItem('userId'),
       showEditModal: false,
       selectedPost: null,
+      users: [], // To store users data
     };
   },
   created() {
     this.fetchPosts();
+    this.fetchUsers(); // Fetch users data
   },
   methods: {
     async fetchPosts() {
@@ -51,6 +54,18 @@ export default {
       } catch (error) {
         console.error('Error fetching posts:', error);
       }
+    },
+    async fetchUsers() {
+      try {
+        const response = await apiClient.get('/users');
+        this.users = response.data;
+      } catch (error) {
+        console.error('Error fetching users:', error);
+      }
+    },
+    getUsername(userId) {
+      const user = this.users.find(user => user.id === userId);
+      return user ? user.username : 'Unknown'; // Return username or 'Unknown' if not found
     },
     async addPost() {
       try {

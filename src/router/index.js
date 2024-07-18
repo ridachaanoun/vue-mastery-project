@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import Home from '../views/HomeView.vue';
 import Posts from '../components/PostList.vue';
-import Comments from '../components/CommentList.vue';
 import Users from '../components/UserList.vue';
 import UserLogin from '../components/UserLogin.vue';
 import UserRegister from '../components/UserRegister.vue';
@@ -16,11 +15,6 @@ const routes = [
     path: '/posts',
     name: 'Posts',
     component: Posts,
-  },
-  {
-    path: '/comments',
-    name: 'Comments',
-    component: Comments,
   },
   {
     path: '/users',

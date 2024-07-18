@@ -4,7 +4,6 @@
         <router-link to="/" class="font-bold text-xl">Home</router-link>
         <div>
           <router-link to="/posts" class="mr-4">Posts</router-link>
-          <router-link to="/comments" class="mr-4">Comments</router-link>
           <router-link to="/users" class="mr-4">Users</router-link>
           <router-link v-if="!isAuthenticated" to="/login" class="mr-4">Login</router-link>
           <router-link v-if="!isAuthenticated" to="/register" class="mr-4">Register</router-link>
